@@ -5,31 +5,56 @@
 #include "time.h"
 #include "pgcd.h"
 
+void exit_if(int condition, const char *prefix)
+{
+    if (condition) {
+        perror(prefix);
+        exit(1);
+    }
+}
+
 int main (int argc, char * argv []) 
 {
-	int tab[][2] = {{1,1},
-					{1,2},
-					{2,4},
-					{10,10},
-					{100,100},
-					{BORNESUP, BORNESUP},
-					{0,2},
-					{2,0},
-					{0,0}};
+	int a;
+	int b;
+	int c;
+	int aFinished = 1;
+	int bFinished = 1;
+	int first = 0;
+
+	FILE* fd_refA;
+	FILE* fd_refB;
+	FILE* fd_resuC;
+	fd_refA = fopen("./src/ref_A.txt", "r");
+	exit_if(fd_refA == NULL, "Fail oppening ref_A");
+	fd_refB = fopen("./src/ref_B.txt", "r");
+	exit_if(fd_refB == NULL, "Fail oppening ref_B");
+	fd_resuC = fopen("./src/resu_C.txt", "w");
+	exit_if(fd_resuC == NULL, "Fail oppening resu_C");
 
 	printf("(II) Starting PGCD program\n");
 
-	assert(PGCD(tab[0][0], tab[0][1]) == 1);
-	assert(PGCD(tab[1][0], tab[1][1]) == 1);
-	assert(PGCD(tab[2][0], tab[2][1]) == 2);
-	assert(PGCD(tab[3][0], tab[3][1]) == 10);
-	assert(PGCD(tab[4][0], tab[4][1]) == 100);
-	assert(PGCD(tab[5][0], tab[5][1]) == BORNESUP);
-	assert(PGCD(tab[6][0], tab[6][1]) == 2);
-	assert(PGCD(tab[7][0], tab[7][1]) == 2);
-	assert(PGCD(tab[8][0], tab[8][1]) == 0);
+	do {
+		aFinished = fscanf(fd_refA, "%d\n", &a);
+		bFinished = fscanf(fd_refB, "%d\n", &b);
+		if (aFinished != EOF && bFinished != EOF)
+		{
+			c = PGCD(a,b);
+			if(!first) 
+			{
+				fprintf(fd_resuC, "%d", c);
+				first++;
+			} else  {
+				fprintf(fd_resuC, "\n%d", c);
+			}
+		}
+	} while(aFinished != EOF && bFinished != EOF);
 
 	printf("(II) End of PGCD program\n");
+
+	fclose(fd_refA);
+	fclose(fd_refB);
+	fclose(fd_resuC);
 
   return 0;
 }
