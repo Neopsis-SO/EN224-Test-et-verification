@@ -4,7 +4,7 @@
 #include "assert.h"
 #include "time.h"
 
-#define NB_TESTS 2000
+#define NB_TESTS 20000
 #define BORNESUP 65535
 #define BORNEINF 1
 
@@ -30,6 +30,22 @@ int PGCD(const int A, const int B)
 	return a;
 }
 
+int PGCD_euclide(int A, int B)
+{			
+	int C = 0;
+	if(A == 0)
+		return B;
+	else if(B == 0)
+		return A;
+
+	while(B != 0){
+		C = A % B;
+		A = B;
+		B = C;
+	}
+	return A;
+}
+
 int RandA(void)
 {
 	int temp = rand();
@@ -46,8 +62,8 @@ int main (int argc, char * argv [])
 {
 	int a = 0;
 	int b = 0;
-
-	// srand(time(NULL));
+	int r1 = 0;
+	int r2 = 0;
 
 	printf("(II) Starting PGCD program\n");
 	
@@ -55,7 +71,10 @@ int main (int argc, char * argv [])
 	{
 		a = RandA();
 		b = RandB();
-		printf("Test %d : a = %d, b = %d, result = %d\n", i, a, b, PGCD(a,b));
+		r1 = PGCD(a,b);
+		r2 = PGCD_euclide(a,b);
+		if (r1 != r2)
+			printf("Test %d : a = %d, b = %d, r1 = %d, r2 = %d\n", i, a, b, r1, r2);
 	}
 
 	printf("(II) End of PGCD program\n");
