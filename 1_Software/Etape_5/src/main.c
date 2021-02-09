@@ -6,16 +6,19 @@
 
 #define NB_TESTS 20000
 #define BORNESUP 65535
-#define BORNEINF 1
+#define BORNEINF 0
 
 int PGCD(const int A, const int B)
 {
-	printf("A = %d, B = %d\n", A, B);	//Test permettant de vérifier le ouple de valeur pour lequel la fonction ne va pas
+	// printf("A = %d, B = %d\n", A, B);	//Test permettant de vérifier le ouple de valeur pour lequel la fonction ne va pas
 	int a = A;
 	int b = B;
 
-	assert(A >= BORNEINF && A <= BORNESUP);
-    assert(B >= BORNEINF && B <= BORNESUP);
+    // Pre condition
+	assert(A >= BORNEINF);
+	assert(A <= BORNESUP);
+    assert(B >= BORNEINF);
+	assert(B <= BORNESUP);
 
 	//Cas particulier quand a ou b vaut 0
 	if(a == 0)
@@ -23,6 +26,7 @@ int PGCD(const int A, const int B)
 	else if (b == 0)
 		b = a;
 
+    // Cas normal
 	while(a != b)
 	{
 		if(a > b)
@@ -30,19 +34,28 @@ int PGCD(const int A, const int B)
 		else
 			b = b - a;
 	}
+
+    // Post condition
+	assert(a >= BORNEINF && a <= BORNESUP);
+	// assert(a <= A);
+	// assert(b <= B);
+	// assert(A%a == 0);
+	// assert(B%a == 0);
+
+    // Resultat
 	return a;
 }
 
 int RandA(void)
 {
 	int temp = rand();
-	return temp % BORNESUP;
+	return temp % (BORNESUP+1);	//Pour avoir une valeur sur l intervalle [0;BORNESUP]
 }
 
 int RandB(void)
 {
 	int temp = rand();
-	return temp % BORNESUP;
+	return temp % (BORNESUP+1);	//Pour avoir une valeur sur l intervalle [0;BORNESUP]
 }
 
 int main (int argc, char * argv []) 
@@ -55,8 +68,8 @@ int main (int argc, char * argv [])
 	
 	for(int i = 1; i <= NB_TESTS; i++)
 	{
-		a = RandA() + 1; //Ajout de +1 pour éviter d'avoir 0 dans le PGCD
-		b = RandB() + 1; //Ajout de +1 pour éviter d'avoir 0 dans le PGCD
+		a = RandA(); //Ajout de +1 pour éviter d'avoir 0 dans le PGCD
+		b = RandB(); //Ajout de +1 pour éviter d'avoir 0 dans le PGCD
 		PGCD(a,b);
 		// printf("Test %d : a = %d, b = %d, result = %d\n", i, a, b, PGCD(a,b));
 	}
