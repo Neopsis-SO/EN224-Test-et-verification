@@ -20,9 +20,9 @@ int PGCD(const int A, const int B)
 
 	//Cas particulier quand a ou b vaut 0
 	if(a == 0)
-		return a;
+		return B;
 	else if (b == 0)
-		return b;
+		return A;
 
     // Cas normal
 	while(a != b)
