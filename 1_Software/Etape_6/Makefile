@@ -1,11 +1,11 @@
 CC=gcc
 LDFLAGS=-lm
 EXEC=main
-SRC=./src/main.c
+SRC=./src/main.c ./src/pgcd.c
 
 OBJ= $(SRC:.c=.o)
 
-CFLAGS=-O2 -Wall -DNDEBUG
+CFLAGS=-O2 -Wall
 
 all: $(EXEC)
 

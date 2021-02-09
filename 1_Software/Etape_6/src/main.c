@@ -3,64 +3,31 @@
 #include "math.h"
 #include "assert.h"
 #include "time.h"
-
-#define NB_TESTS 20000
-#define BORNESUP 65535
-#define BORNEINF 1
-
-int PGCD(const int A, const int B)
-{
-	printf("A = %d, B = %d\n", A, B);	//Test permettant de vérifier le ouple de valeur pour lequel la fonction ne va pas
-	int a = A;
-	int b = B;
-
-	assert(A >= BORNEINF && A <= BORNESUP);
-    assert(B >= BORNEINF && B <= BORNESUP);
-
-	//Cas particulier quand a ou b vaut 0
-	if(a == 0)
-		a = b;
-	else if (b == 0)
-		b = a;
-
-	while(a != b)
-	{
-		if(a > b)
-			a = a - b;
-		else
-			b = b - a;
-	}
-	assert(a > 0);
-	return a;
-}
-
-int RandA(void)
-{
-	int temp = rand();
-	return temp % (BORNESUP+1);	//Pour avoir une valeur sur l intervalle [0;BORNESUP]
-}
-
-int RandB(void)
-{
-	int temp = rand();
-	return temp % (BORNESUP+1);	//Pour avoir une valeur sur l intervalle [0;BORNESUP]
-}
+#include "pgcd.h"
 
 int main (int argc, char * argv []) 
 {
-	int a = 0;
-	int b = 0;
-	PGCD(a,b);	//Permet de prouver que les assertion sont desactivé avec -DNDEBUG
+	int tab[][2] = {{1,1},
+					{1,2},
+					{2,4},
+					{10,10},
+					{100,100},
+					{BORNESUP, BORNESUP},
+					{0,2},
+					{2,0},
+					{0,0}};
 
 	printf("(II) Starting PGCD program\n");
-	
-	for(int i = 1; i <= NB_TESTS; i++)
-	{
-		a = RandA(); //Ajout de +1 pour éviter d'avoir 0 dans le PGCD
-		b = RandB(); //Ajout de +1 pour éviter d'avoir 0 dans le PGCD
-		PGCD(a,b);
-		// printf("Test %d : a = %d, b = %d, result = %d\n", i, a, b, PGCD(a,b));
-	}
+
+	assert(PGCD(tab[0][0], tab[0][1]) == 1);
+	assert(PGCD(tab[1][0], tab[1][1]) == 1);
+	assert(PGCD(tab[2][0], tab[2][1]) == 2);
+	assert(PGCD(tab[3][0], tab[3][1]) == 10);
+	assert(PGCD(tab[4][0], tab[4][1]) == 100);
+	assert(PGCD(tab[5][0], tab[5][1]) == BORNESUP);
+	assert(PGCD(tab[6][0], tab[6][1]) == 2);
+	assert(PGCD(tab[7][0], tab[7][1]) == 2);
+	assert(PGCD(tab[8][0], tab[8][1]) == 0);
 
 	printf("(II) End of PGCD program\n");
 
