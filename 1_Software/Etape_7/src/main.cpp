@@ -1,35 +1,27 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
-#include "assert.h"
-#include "time.h"
 #include "pgcd.h"
 
-int main (int argc, char * argv []) 
-{
-	int tab[][2] = {{1,1},
-					{1,2},
-					{2,4},
-					{10,10},
-					{100,100},
-					{BORNESUP, BORNESUP},
-					{0,2},
-					{2,0},
-					{0,0}};
+#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+#include "catch.hpp"
 
-	printf("(II) Starting PGCD program\n");
+TEST_CASE( "PGCD normal", "[pgcd]" ) {
+	SECTION("A > B") {
+		REQUIRE( PGCD(2, 1) == 1 );
+		REQUIRE( PGCD(4, 2) == 2 );
+		REQUIRE( PGCD(65535, 65534) == 1);
+	}
+	SECTION("A < B") {
+		REQUIRE( PGCD(1, 2) == 1 );
+		REQUIRE( PGCD(2, 4) == 2 );
+		REQUIRE( PGCD(65534, 65535) == 1);
+	}
+	SECTION("A = B") {
+		REQUIRE( PGCD(1, 1) == 1 );
+		REQUIRE( PGCD(10, 10) == 10 );
+		REQUIRE( PGCD(65535, 65535) == 65535);
+	}
+}
 
-	assert(PGCD(tab[0][0], tab[0][1]) == 1);
-	assert(PGCD(tab[1][0], tab[1][1]) == 1);
-	assert(PGCD(tab[2][0], tab[2][1]) == 2);
-	assert(PGCD(tab[3][0], tab[3][1]) == 10);
-	assert(PGCD(tab[4][0], tab[4][1]) == 100);
-	assert(PGCD(tab[5][0], tab[5][1]) == BORNESUP);
-	assert(PGCD(tab[6][0], tab[6][1]) == 2);
-	assert(PGCD(tab[7][0], tab[7][1]) == 2);
-	assert(PGCD(tab[8][0], tab[8][1]) == 0);
 
-	printf("(II) End of PGCD program\n");
-
-  return 0;
+TEST_CASE( "PGCD excpetion", "[pgcd]" ) {
+	REQUIRE( PGCD(0, 0) == 0);
 }
