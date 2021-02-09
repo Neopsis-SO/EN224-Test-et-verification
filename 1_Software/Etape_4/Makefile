@@ -5,7 +5,7 @@ SRC=./src/main.c
 
 OBJ= $(SRC:.c=.o)
 
-CFLAGS=-O2 -Wall
+CFLAGS=-O2 -Wall -DNDEBUG
 
 all: $(EXEC)
 
