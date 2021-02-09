@@ -7,7 +7,7 @@ int PGCD(int A, int B)
 
 	return A;
 }
-
+//test
 int main (int argc, char * argv []){
 	printf("(II) Starting PGCD program\n");
 
