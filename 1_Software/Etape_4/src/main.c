@@ -14,8 +14,11 @@ int PGCD(const int A, const int B)
 	int a = A;
 	int b = B;
 
-	assert(A >= BORNEINF && A <= BORNESUP);
-    assert(B >= BORNEINF && B <= BORNESUP);
+    // Pre condition
+	assert(A >= BORNEINF);
+	assert(A <= BORNESUP);
+    assert(B >= BORNEINF);
+	assert(B <= BORNESUP);
 
 	//Cas particulier quand a ou b vaut 0
 	if(a == 0)
@@ -23,6 +26,7 @@ int PGCD(const int A, const int B)
 	else if (b == 0)
 		b = a;
 
+    // Cas normal
 	while(a != b)
 	{
 		if(a > b)
@@ -30,6 +34,8 @@ int PGCD(const int A, const int B)
 		else
 			b = b - a;
 	}
+
+    // Resultat
 	return a;
 }
 
