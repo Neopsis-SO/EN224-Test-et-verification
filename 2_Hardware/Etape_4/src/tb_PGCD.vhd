@@ -25,6 +25,8 @@
 library IEEE;
 use IEEE.Std_logic_1164.all;
 use IEEE.Numeric_Std.all;
+use STD.textio.all;
+use ieee.std_logic_textio.all;
 
 entity tb_PGCD is
 end;
@@ -47,12 +49,17 @@ architecture bench of tb_PGCD is
   signal RESET: STD_LOGIC;
   signal idata_a: STD_LOGIC_VECTOR (31 downto 0);
   signal idata_b: STD_LOGIC_VECTOR (31 downto 0);
+  signal idata_c: STD_LOGIC_VECTOR (31 downto 0);
   signal idata_en: STD_LOGIC;
   signal odata: STD_LOGIC_VECTOR (31 downto 0);
   signal odata_en: STD_LOGIC ;
 
   constant clock_period: time := 10 ns;
   signal stop_the_clock: boolean;
+  
+  file file_data_a : text;
+  file file_data_b : text;
+  file file_data_c : text;
 
 begin
 
@@ -65,13 +72,24 @@ begin
                        odata_en => odata_en );
 
   stimulus: process
-  begin
+  variable v_ILINE_a     : line;
+  variable v_ILINE_b     : line;
+  variable v_ILINE_c     : line;
+  variable v_idata_a: STD_LOGIC_VECTOR (31 downto 0);
+  variable v_idata_b: STD_LOGIC_VECTOR (31 downto 0);
+  variable v_idata_c: STD_LOGIC_VECTOR (31 downto 0);
   
+  begin
     -- Put initialisation code here
+    file_open(file_data_a, "data_a.txt", read_mode);
+    file_open(file_data_b, "data_b.txt", read_mode);
+    file_open(file_data_c, "data_c.txt", read_mode);
+    
     RESET <= '1';
     idata_en <= '0';
     idata_a <= x"00000000";
     idata_b <= x"00000000";
+    
     wait for 4*clock_period;
     
     -- Put test bench stimulus code here
@@ -79,96 +97,34 @@ begin
     RESET <= '0';
     wait for 4*clock_period;
     
-    idata_a <= x"00000000";
-    idata_b <= x"00000001";
-    idata_en <= '1';
-    wait for clock_period;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    while odata_en = '0' loop
-        idata_en <= '0';
+    while ((not endfile(file_data_a)) and (not endfile(file_data_b)) and (not endfile(file_data_c))) loop
+        readline(file_data_a, v_ILINE_a);
+        read(v_ILINE_a, v_idata_a);
+        idata_a <= v_idata_a;
+        
+        readline(file_data_b, v_ILINE_b);
+        read(v_ILINE_b, v_idata_b);
+        idata_b <= v_idata_b;
+        
+        readline(file_data_c, v_ILINE_c);
+        read(v_ILINE_c, v_idata_c);
+        idata_c <= v_idata_c;
+        
+        idata_en <= '1';
         wait for clock_period;
+        
+        idata_a <= x"00000000";
+        idata_b <= x"00000000";
+        while odata_en = '0' loop
+            idata_en <= '0';
+            wait for clock_period;
+        end loop;
+        ASSERT UNSIGNED(odata) = UNSIGNED(idata_c) SEVERITY ERROR;
     end loop;
-    ASSERT UNSIGNED(odata) = TO_UNSIGNED( 1, 32) SEVERITY ERROR;
     
-    idata_a <= x"00000002";
-    idata_b <= x"00000000";
-    idata_en <= '1';
-    wait for clock_period;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    while odata_en = '0' loop
-        idata_en <= '0';
-        wait for clock_period;
-    end loop;
-    ASSERT UNSIGNED(odata) = TO_UNSIGNED( 2, 32) SEVERITY ERROR;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    idata_en <= '1';
-    wait for clock_period;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    while odata_en = '0' loop
-        idata_en <= '0';
-        wait for clock_period;
-    end loop;
-    ASSERT UNSIGNED(odata) = TO_UNSIGNED( 0, 32) SEVERITY ERROR;
-    
-    idata_a <= x"00FFFFFF";
-    idata_b <= x"0000FFFF";
-    idata_en <= '1';
-    wait for clock_period;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    while odata_en = '0' loop
-        idata_en <= '0';
-        wait for clock_period;
-    end loop;
-    ASSERT UNSIGNED(odata) = TO_UNSIGNED( 255, 32) SEVERITY ERROR;
-    
-    idata_a <= x"00000002";
-    idata_b <= x"00000001";
-    idata_en <= '1';
-    wait for clock_period;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    while odata_en = '0' loop
-        idata_en <= '0';
-        wait for clock_period;
-    end loop;
-    ASSERT UNSIGNED(odata) = TO_UNSIGNED( 1, 32) SEVERITY ERROR;
-    
-    idata_a <= x"00000018";
-    idata_b <= x"00000060";
-    idata_en <= '1';
-    wait for clock_period;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    while odata_en = '0' loop
-        idata_en <= '0';
-        wait for clock_period;
-    end loop;
-    ASSERT UNSIGNED(odata) = TO_UNSIGNED( 23, 32) SEVERITY ERROR;
-    
-    idata_a <= x"0000FFFF";
-    idata_b <= x"000000FF";
-    idata_en <= '1';
-    wait for clock_period;
-    
-    idata_a <= x"00000000";
-    idata_b <= x"00000000";
-    while odata_en = '0' loop
-        idata_en <= '0';
-        wait for clock_period;
-    end loop;
-    ASSERT UNSIGNED(odata) = TO_UNSIGNED( 254, 32) SEVERITY failure;
+    file_close(file_data_a);
+    file_close(file_data_b);
+    file_close(file_data_c);
     
     stop_the_clock <= true;
     wait;
