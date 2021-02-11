@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Feb  9 18:07:50 2021
+# Process ID: 1560
+# Current directory: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_1/vivado/2_Hardware.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_1/vivado/2_Hardware.sim/sim_1/behav/xsim/xsim.dir/tb_PGCD_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_1/vivado/2_Hardware.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_1/vivado/2_Hardware.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_1/vivado/2_Hardware.sim/sim_1/behav/xsim/xsim.dir/tb_PGCD_behav/webtalk/xsim_webtalk.tcl -notrace
