@@ -50,6 +50,9 @@ architecture Behavioral of PGCD is
     type Etat is (Etat_RESET, Etat_Compute, Etat_Finished);
     signal pr_state : Etat := Etat_RESET;
     signal data_a, data_b : unsigned (31 downto 0) := x"00000000";
+    -- pragma translate_off
+    signal nb_clock : unsigned (31 downto 0) := x"00000000";
+    -- pragma translate_on
 
 begin
     maj_etat : process(CLK, RESET) -- demandez comment il veut faire pour le compteur hors de la machine d'etat?
@@ -65,6 +68,9 @@ begin
                 if (idata_en = '1') then
                   assert idata_a <= x"0000FFFF" report "a pas dans intervalle" severity error;
                   assert idata_b <= x"0000FFFF" report "b pas dans intervalle" severity failure;
+                  -- pragma translate_off
+                  nb_clock <= x"00000000";
+                  -- pragma translate_on
                   pr_state <= Etat_Compute;
                 else
                   pr_state <= Etat_RESET;
@@ -85,6 +91,9 @@ begin
                 
                 --calcul
                 if (data_a /= data_b) then
+                    -- pragma translate_off
+                    nb_clock <= nb_clock + 1;
+                    -- pragma translate_on
                     if (data_a > data_b) then
                         data_a <= data_a - data_b;
                     else
@@ -95,6 +104,9 @@ begin
               when Etat_Finished => 
                 --calcul de l etat suivant
                 pr_state <= Etat_RESET;
+                -- pragma translate_off
+                REPORT "nombre de cycle d'horloge : " & integer'image(to_integer(nb_clock));
+                -- pragma translate_on
                 
                 --affectation des sorties
                 odata_en <= '1';

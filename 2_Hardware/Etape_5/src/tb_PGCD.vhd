@@ -119,7 +119,6 @@ begin
             idata_en <= '0';
             wait for clock_period;
         end loop;
-        REPORT "counter : " & integer'image(to_integer( mon_unsigned ));
         ASSERT UNSIGNED(odata) = UNSIGNED(idata_c) SEVERITY ERROR;
     end loop;
     
