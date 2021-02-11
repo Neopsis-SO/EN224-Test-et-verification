@@ -75,7 +75,7 @@ begin
                 
               when Etat_Compute => 
                 --calcul de l etat suivant
-                if (data_a = data_b) then
+                if (data_a = data_b or data_a = 0 or data_b = 0) then
                   pr_state <= Etat_Finished;
                 else
                   pr_state <= Etat_Compute;
@@ -96,7 +96,11 @@ begin
                 
                 --affectation des sorties
                 odata_en <= '1';
-                odata <= std_logic_vector(data_a);
+                if (data_a = 0) then
+                    odata <= std_logic_vector(data_b);
+                else
+                    odata <= std_logic_vector(data_a);
+                end if;
             end case;
         end if;
     end process maj_etat;
