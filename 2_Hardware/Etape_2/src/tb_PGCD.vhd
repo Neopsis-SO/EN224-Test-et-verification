@@ -109,6 +109,16 @@ begin
     idata_b <= x"00000000";
     wait for 10*clock_period;
     
+    idata_a <= x"000FFFFF";
+    idata_b <= x"0000FFFF";
+    idata_en <= '1';
+    wait for clock_period;
+    
+    idata_en <= '0';
+    idata_a <= x"00000000";
+    idata_b <= x"00000000";
+    wait for 1000*clock_period;
+    
     idata_a <= x"00000002";
     idata_b <= x"00000001";
     idata_en <= '1';
@@ -122,7 +132,7 @@ begin
     idata_a <= x"00000018";
     idata_b <= x"00000060";
     idata_en <= '1';
-    wait for 4 * clock_period;
+    wait for clock_period;
     
     idata_en <= '0';
     idata_a <= x"00000000";
@@ -132,7 +142,7 @@ begin
     idata_a <= x"0000FFFF";
     idata_b <= x"000000FF";
     idata_en <= '1';
-    wait for 4 * clock_period;
+    wait for clock_period;
     
     idata_en <= '0';
     idata_a <= x"00000000";

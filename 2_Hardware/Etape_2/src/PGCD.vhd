@@ -63,6 +63,8 @@ begin
               when Etat_RESET => 
                 --calcul de l etat suivant
                 if (idata_en = '1') then
+                    assert idata_a <= x"0000FFFF" report "a pas dans intervalle" severity failure;
+                    assert idata_b <= x"0000FFFF" report "b pas dans intervalle";
                   pr_state <= Etat_Compute;
                 else
                   pr_state <= Etat_RESET;
