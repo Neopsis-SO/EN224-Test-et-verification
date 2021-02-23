@@ -24,4 +24,5 @@ TEST_CASE( "PGCD normal", "[pgcd]" ) {
 
 TEST_CASE( "PGCD excpetion", "[pgcd]" ) {
 	REQUIRE( PGCD(0, 0) == 0);
+	REQUIRE( PGCD(0, 1) == 1);
 }

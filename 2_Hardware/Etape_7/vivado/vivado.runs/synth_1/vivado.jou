@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Feb 13 13:51:12 2021
+# Process ID: 19504
+# Current directory: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1
+# Command line: vivado.exe -log PGCD_uart.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PGCD_uart.tcl
+# Log file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1/PGCD_uart.vds
+# Journal file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source PGCD_uart.tcl -notrace
