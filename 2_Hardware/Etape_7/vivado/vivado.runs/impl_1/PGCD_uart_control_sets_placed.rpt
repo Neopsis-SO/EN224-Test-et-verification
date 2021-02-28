@@ -1,0 +1,125 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Sat Feb 13 16:28:39 2021
+| Host         : DESKTOP-MJ3DDRR running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file PGCD_uart_control_sets_placed.rpt
+| Design       : PGCD_uart
+| Device       : xc7a50t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    47 |
+|    Minimum number of control sets                        |    47 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    24 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    47 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |    33 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     7 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              22 |           18 |
+| No           | No                    | Yes                    |               4 |            2 |
+| No           | Yes                   | No                     |              63 |           22 |
+| Yes          | No                    | No                     |              80 |           32 |
+| Yes          | No                    | Yes                    |              32 |           12 |
+| Yes          | Yes                   | No                     |             135 |           49 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------+---------------------------------------------+--------------------------+------------------+----------------+--------------+
+|     Clock Signal     |                Enable Signal                |     Set/Reset Signal     | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------+---------------------------------------------+--------------------------+------------------+----------------+--------------+
+|  CLK100MHZ_IBUF_BUFG | rcv/nbbits[3]_i_2__0_n_0                    | rcv/nbbits[3]_i_1__0_n_0 |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG |                                             | snd/cnt[9]_i_1__0_n_0    |                2 |              5 |         2.50 |
+|  CLK100MHZ_IBUF_BUFG | rcv/dat[7]_i_1_n_0                          |                          |                4 |              8 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG | rcv/E[0]                                    | LED_OBUF[0]              |                3 |              8 |         2.67 |
+|  CLK100MHZ_IBUF_BUFG | rcv/shift0                                  |                          |                3 |              8 |         2.67 |
+|  CLK100MHZ_IBUF_BUFG | snd/shift[7]_i_1__0_n_0                     | LED_OBUF[0]              |                5 |              8 |         1.60 |
+|  CLK100MHZ_IBUF_BUFG | snd/write_index0                            | LED_OBUF[0]              |                5 |             11 |         2.20 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_64_127_0_2_i_1_n_0             |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_640_703_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_960_1023_0_2_i_1_n_0           |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1344_1407_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_896_959_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/n_elements[0]_i_1_n_0                   | LED_OBUF[0]              |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_0_63_0_2_i_1_n_0               |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1088_1151_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1152_1215_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1024_1087_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1408_1471_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1472_1535_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_128_191_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1536_1599_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1280_1343_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1216_1279_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_832_895_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1728_1791_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1856_1919_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1920_1983_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1792_1855_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_192_255_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1664_1727_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1600_1663_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_448_511_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_512_575_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_576_639_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_256_319_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_320_383_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_1984_2047_0_2_i_1_n_0          |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_384_447_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_768_831_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | snd/FIFO_reg_704_767_0_2_i_1_n_0            |                          |                3 |             12 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG |                                             |                          |               18 |             22 |         1.22 |
+|  CLK100MHZ_IBUF_BUFG | snd/read_index[0]_i_1_n_0                   | LED_OBUF[0]              |               10 |             28 |         2.80 |
+|  CLK100MHZ_IBUF_BUFG | PGCD_ENGINE/data_a0                         |                          |               11 |             32 |         2.91 |
+|  CLK100MHZ_IBUF_BUFG | PGCD_ENGINE/FSM_onehot_pr_state_reg_n_0_[2] | LED_OBUF[0]              |               12 |             32 |         2.67 |
+|  CLK100MHZ_IBUF_BUFG | PGCD_ENGINE/data_b0                         |                          |               14 |             32 |         2.29 |
+|  CLK100MHZ_IBUF_BUFG |                                             | LED_OBUF[0]              |               22 |             62 |         2.82 |
+|  CLK100MHZ_IBUF_BUFG | rcv/pack_from_uart_en_reg[5][0]             | LED_OBUF[0]              |               22 |             64 |         2.91 |
++----------------------+---------------------------------------------+--------------------------+------------------+----------------+--------------+
+
+

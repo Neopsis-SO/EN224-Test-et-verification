@@ -2,81 +2,80 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sat Feb 13 13:51:12 2021
-# Process ID: 19504
-# Current directory: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1
+# Start of session at: Sat Feb 13 16:25:22 2021
+# Process ID: 11412
+# Current directory: C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/synth_1
 # Command line: vivado.exe -log PGCD_uart.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PGCD_uart.tcl
-# Log file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1/PGCD_uart.vds
-# Journal file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1\vivado.jou
+# Log file: C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/synth_1/PGCD_uart.vds
+# Journal file: C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source PGCD_uart.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1096.277 ; gain = 0.000
-Command: synth_design -top PGCD_uart -part xc7a50tcsg325-1
+Command: synth_design -top PGCD_uart -part xc7a50tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
-INFO: [Device 21-403] Loading part xc7a50tcsg325-1
+INFO: [Device 21-403] Loading part xc7a50tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2704
+INFO: [Synth 8-7075] Helper process launched with PID 17008
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1096.277 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1107.156 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'PGCD_uart' [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/PGCD_uart.vhd:15]
-INFO: [Synth 8-638] synthesizing module 'UART_recv' [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/uart_recv.vhd:35]
-INFO: [Synth 8-256] done synthesizing module 'UART_recv' (1#1) [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/uart_recv.vhd:35]
-INFO: [Synth 8-638] synthesizing module 'PGCD' [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/PGCD.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'PGCD' (2#1) [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/PGCD.vhd:19]
-INFO: [Synth 8-638] synthesizing module 'UART_fifoed_send' [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/UART_send.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'PGCD_uart' [C:/Users/max95/Desktop/Etape_7/src/PGCD_uart.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'UART_recv' [C:/Users/max95/Desktop/Etape_7/src/uart_recv.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'UART_recv' (1#1) [C:/Users/max95/Desktop/Etape_7/src/uart_recv.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'PGCD' [C:/Users/max95/Desktop/Etape_7/src/PGCD.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'PGCD' (2#1) [C:/Users/max95/Desktop/Etape_7/src/PGCD.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'UART_fifoed_send' [C:/Users/max95/Desktop/Etape_7/src/UART_send.vhd:33]
 	Parameter fifo_size bound to: 2048 - type: integer 
 	Parameter fifo_almost bound to: 508 - type: integer 
 	Parameter drop_oldest_when_full bound to: 0 - type: bool 
 	Parameter asynch_fifo_full bound to: 1 - type: bool 
-INFO: [Synth 8-256] done synthesizing module 'UART_fifoed_send' (3#1) [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/UART_send.vhd:33]
-INFO: [Synth 8-256] done synthesizing module 'PGCD_uart' (4#1) [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/PGCD_uart.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'UART_fifoed_send' (3#1) [C:/Users/max95/Desktop/Etape_7/src/UART_send.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'PGCD_uart' (4#1) [C:/Users/max95/Desktop/Etape_7/src/PGCD_uart.vhd:15]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1119.402 ; gain = 23.125
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1117.078 ; gain = 9.922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1119.402 ; gain = 23.125
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1117.078 ; gain = 9.922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1119.402 ; gain = 23.125
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1117.078 ; gain = 9.922
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1119.402 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1117.078 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/xdc/Nexys-A7-50T-Master.xdc]
-Finished Parsing XDC File [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/xdc/Nexys-A7-50T-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/xdc/Nexys-A7-50T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PGCD_uart_propImpl.xdc].
+Parsing XDC File [C:/Users/max95/Desktop/Etape_7/xdc/Nexys-A7-50T-Master.xdc]
+Finished Parsing XDC File [C:/Users/max95/Desktop/Etape_7/xdc/Nexys-A7-50T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/max95/Desktop/Etape_7/xdc/Nexys-A7-50T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PGCD_uart_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/PGCD_uart_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1232.965 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1231.816 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1232.965 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1231.816 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 1232.965 ; gain = 136.688
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1231.816 ; gain = 124.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a50tcsg325-1
+Loading part: xc7a50tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 1232.965 ; gain = 136.688
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1231.816 ; gain = 124.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 1232.965 ; gain = 136.688
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1231.816 ; gain = 124.660
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_recv'
 INFO: [Synth 8-802] inferred FSM for state register 'pr_state_reg' in module 'PGCD'
@@ -101,7 +100,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'pr_state_reg' using encoding 'one-hot' in module 'PGCD'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1232.965 ; gain = 136.688
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1231.816 ; gain = 124.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -161,7 +160,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:18 . Memory (MB): peak = 1261.477 ; gain = 165.199
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1254.473 ; gain = 147.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -182,13 +181,13 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:24 ; elapsed = 00:01:32 . Memory (MB): peak = 1261.477 ; gain = 165.199
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 1254.473 ; gain = 147.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:43 ; elapsed = 00:01:52 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -208,7 +207,7 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:44 ; elapsed = 00:01:53 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Technology Mapping : Time (s): cpu = 00:01:10 ; elapsed = 00:01:12 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -226,37 +225,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:53 ; elapsed = 00:02:01 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:53 ; elapsed = 00:02:01 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -292,18 +291,18 @@ Report Cell Usage:
 |18    |OBUF     |    17|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:29 ; elapsed = 00:01:55 . Memory (MB): peak = 1459.137 ; gain = 249.297
-Synthesis Optimization Complete : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 1459.137 ; gain = 362.859
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:16 . Memory (MB): peak = 1458.301 ; gain = 236.406
+Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.301 ; gain = 351.145
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1459.137 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1458.301 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 206 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1459.137 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1458.301 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 128 instances were transformed.
   RAM64M => RAM64M (RAMD64E(x4)): 64 instances
@@ -312,7 +311,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:21 . Memory (MB): peak = 1459.137 ; gain = 362.859
-INFO: [Common 17-1381] The checkpoint 'C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1/PGCD_uart.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:32 . Memory (MB): peak = 1458.301 ; gain = 351.145
+INFO: [Common 17-1381] The checkpoint 'C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/synth_1/PGCD_uart.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file PGCD_uart_utilization_synth.rpt -pb PGCD_uart_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Feb 13 13:53:52 2021...
+INFO: [Common 17-206] Exiting Vivado at Sat Feb 13 16:27:04 2021...

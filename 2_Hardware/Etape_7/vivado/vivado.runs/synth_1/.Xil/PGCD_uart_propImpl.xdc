@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/xdc/Nexys-A7-50T-Master.xdc rfile:../../../../xdc/Nexys-A7-50T-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/max95/Desktop/Etape_7/xdc/Nexys-A7-50T-Master.xdc rfile:../../../../xdc/Nexys-A7-50T-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { CLK100MHZ }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
 set_property src_info {type:XDC file:1 line:30 export:INPUT save:INPUT read:READ} [current_design]

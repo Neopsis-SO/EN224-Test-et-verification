@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1/PGCD_uart.tcl"
+  variable script "C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/synth_1/PGCD_uart.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,26 +71,30 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
+set_param synth.incrementalSynthesisCache C:/Users/max95/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-736-DESKTOP-MJ3DDRR/incrSyn
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a50tcsg325-1
+create_project -in_memory -part xc7a50tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.cache/wt [current_project]
-set_property parent.project_path C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/max95/Desktop/Etape_7/vivado/vivado.cache/wt [current_project]
+set_property parent.project_path C:/Users/max95/Desktop/Etape_7/vivado/vivado.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.cache/ip [current_project]
+set_property ip_output_repo c:/Users/max95/Desktop/Etape_7/vivado/vivado.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/PGCD.vhd
-  C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/uart_recv.vhd
-  C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/UART_send.vhd
-  C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/src/PGCD_uart.vhd
+  C:/Users/max95/Desktop/Etape_7/src/PGCD.vhd
+  C:/Users/max95/Desktop/Etape_7/src/uart_recv.vhd
+  C:/Users/max95/Desktop/Etape_7/src/UART_send.vhd
+  C:/Users/max95/Desktop/Etape_7/src/PGCD_uart.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -101,14 +105,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/xdc/Nexys-A7-50T-Master.xdc
-set_property used_in_implementation false [get_files C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/xdc/Nexys-A7-50T-Master.xdc]
+read_xdc C:/Users/max95/Desktop/Etape_7/xdc/Nexys-A7-50T-Master.xdc
+set_property used_in_implementation false [get_files C:/Users/max95/Desktop/Etape_7/xdc/Nexys-A7-50T-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top PGCD_uart -part xc7a50tcsg325-1
+synth_design -top PGCD_uart -part xc7a50tcsg324-1
 OPTRACE "synth_design" END { }
 
 

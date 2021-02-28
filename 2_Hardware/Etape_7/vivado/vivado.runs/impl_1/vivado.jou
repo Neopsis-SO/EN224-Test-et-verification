@@ -2,11 +2,11 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sat Feb 13 13:54:21 2021
-# Process ID: 13012
-# Current directory: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/impl_1
+# Start of session at: Sat Feb 13 16:48:34 2021
+# Process ID: 14432
+# Current directory: C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/impl_1
 # Command line: vivado.exe -log PGCD_uart.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source PGCD_uart.tcl -notrace
-# Log file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/impl_1/PGCD_uart.vdi
-# Journal file: C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/impl_1\vivado.jou
+# Log file: C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/impl_1/PGCD_uart.vdi
+# Journal file: C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source PGCD_uart.tcl -notrace

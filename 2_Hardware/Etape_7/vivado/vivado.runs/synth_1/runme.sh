@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/max95/OneDrive/Documents/Personnel/Etudes/ENSEIRB/02_SEE_2A/03_S8/EN214_Tests_et_verifications/EN224-Test-et-verification/2_Hardware/Etape_7/vivado/vivado.runs/synth_1'
+HD_PWD='C:/Users/max95/Desktop/Etape_7/vivado/vivado.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
